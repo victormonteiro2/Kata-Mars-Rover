@@ -296,31 +296,4 @@ function turnLeft(rover) {
 
 commands(rover, 'rfffrffflff');
 
-console.log(`O log do ${rover.name} é ${rover.travelLog}`); // continua dando erro de "O log do Curiosity Rover é [object Object]" ** VERIFICAR
-/*
-let teste = {
-  somar: function somar(y, x) {
-    return y + x;
-  },
-  subtrair: function sub(y, x) {
-    return y - x;
-  },
-  multiplicar: function mult(y, x) {
-    return y * x;
-  },
-  addtravellog: function add(y, x, d) {
-    const newtravel = {
-      position: {
-        x: x,
-        y: y
-      },
-      direction: d
-    };
-    return rover.travellog.push(newtravel);
-  }
-};
-
-const vini = teste.somar(2, 4);
-
-console.log(vini);
-*/
+console.log(`O log do ${rover.name} é ${rover.travelLog}`);
