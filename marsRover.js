@@ -45,10 +45,13 @@ function commands(rover, orders) {
     }
   }
 }
+rover.travelLog.push([
+  `
+  Start position: x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
+]);
 
 function moveForward(rover) {
   if (rover.direction == 'N') {
-    // DIREÇÃO NORTE - FORWARD**********************************************************
     console.log('Move Forward was called!');
     if (rover.position.y > 0 && rover.position.y <= 9) {
       if (
@@ -63,19 +66,17 @@ function moveForward(rover) {
         console.log("It's a trap! You can't go forward.");
       } else {
         rover.position.y--;
-        rover.travelLog.push(
-          rover.position.x,
-          rover.position.y,
-          rover.direction
-        );
+        rover.travelLog.push([
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
+        ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   } else if (rover.direction == 'S') {
-    // DIREÇÃO SUL - FORWARD*************************************************************
     console.log('Move Forward was called!');
     if (rover.position.y >= 0 && rover.position.y < 9) {
       if (
@@ -91,18 +92,16 @@ function moveForward(rover) {
       } else {
         rover.position.y++;
         rover.travelLog.push([
-          rover.position.x,
-          rover.position.y,
-          rover.direction
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
         ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   } else if (rover.direction == 'E') {
-    // DIREÇÃO LESTE - FORWARD*************************************************************
     console.log('Move Forward was called!');
     if (rover.position.x >= 0 && rover.position.x < 9) {
       if (
@@ -118,18 +117,16 @@ function moveForward(rover) {
       } else {
         rover.position.x++;
         rover.travelLog.push([
-          rover.position.x,
-          rover.position.y,
-          rover.direction
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
         ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   } else if (rover.direction == 'W') {
-    // DIREÇÃO OESTE - FORWARD*************************************************************
     console.log('Move Forward was called!');
     if (rover.position.x > 0 && rover.position.x <= 9) {
       if (
@@ -145,14 +142,13 @@ function moveForward(rover) {
       } else {
         rover.position.x--;
         rover.travelLog.push([
-          rover.position.x,
-          rover.position.y,
-          rover.direction
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
         ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   }
@@ -160,7 +156,6 @@ function moveForward(rover) {
 
 function moveBackwards(rover) {
   if (rover.direction == 'N') {
-    // DIREÇÃO NORTE - BACKWARDS*************************************************************
     console.log('Move Backward was called!');
     if (rover.position.y >= 0 && rover.position.y < 9) {
       if (
@@ -171,18 +166,16 @@ function moveBackwards(rover) {
       } else {
         rover.position.y++;
         rover.travelLog.push([
-          rover.position.x,
-          rover.position.y,
-          rover.direction
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
         ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   } else if (rover.direction == 'S') {
-    // DIREÇÃO SUL - BACKWARDS*************************************************************
     console.log('Move Backwards was called!');
     if (rover.position.y > 0 && rover.position.y <= 9) {
       if (
@@ -193,18 +186,16 @@ function moveBackwards(rover) {
       } else {
         rover.position.y--;
         rover.travelLog.push([
-          rover.position.x,
-          rover.position.y,
-          rover.direction
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
         ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   } else if (rover.direction == 'E') {
-    // DIREÇÃO LESTE - BACKWARDS*************************************************************
     console.log('Move Backwards was called!');
     if (rover.position.x > 0 && rover.position.x <= 9) {
       if (
@@ -215,18 +206,16 @@ function moveBackwards(rover) {
       } else {
         rover.position.x--;
         rover.travelLog.push([
-          rover.position.x,
-          rover.position.y,
-          rover.direction
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
         ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   } else if (rover.direction == 'W') {
-    // DIREÇÃO OESTE - BACKWARDS*************************************************************
     console.log('Move Backwards was called!');
     if (rover.position.x >= 0 && rover.position.x < 9) {
       if (
@@ -237,14 +226,13 @@ function moveBackwards(rover) {
       } else {
         rover.position.x++;
         rover.travelLog.push([
-          rover.position.x,
-          rover.position.y,
-          rover.direction
+          `
+          x: ${rover.position.x}, y: ${rover.position.y}, Direction: ${rover.direction}`
         ]);
       }
       console.log(`${rover.name} keeps facing ${rover.direction}`);
     } else {
-      console.log('Fora do tabuleiro');
+      console.log('404 - you are on the edge, watch your steps!');
       console.log(`${rover.name} is at the same place`);
     }
   }
@@ -294,6 +282,6 @@ function turnLeft(rover) {
   }
 }
 
-commands(rover, 'rfffrffflff');
+commands(rover, 'Zfrfffrfflffrffrffb');
 
 console.log(`O log do ${rover.name} é ${rover.travelLog}`);
